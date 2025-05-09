@@ -92,26 +92,6 @@ namespace POSales
             }
         }
 
-        private void btnDSales_Click(object sender, EventArgs e)
-        {
-            slide(btnDSales);
-            DailySale dailySale = new DailySale(new MainForm());
-            dailySale.solduser = lblUsername.Text;
-            dailySale.dtFrom.Enabled = false;
-            dailySale.dtTo.Enabled = false;
-            dailySale.cboCashier.Enabled = false;
-            dailySale.cboCashier.Text = lblUsername.Text;
-            dailySale.picClose.Visible = true;
-            dailySale.lblTitle.Visible = true;
-            dailySale.ShowDialog();
-        }
-
-        private void btnPass_Click(object sender, EventArgs e)
-        {
-            slide(btnPass);
-            ChangePassword change = new ChangePassword(this);
-            change.ShowDialog();
-        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -145,11 +125,11 @@ namespace POSales
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
-
                     i++;
-                    total += Convert.ToDouble(dr["total"].ToString());
+                    double itemTotal = Convert.ToDouble(dr["price"].ToString()) * Convert.ToDouble(dr["qty"].ToString());
+                    total += itemTotal;
                     discount += Convert.ToDouble(dr["disc"].ToString());
-                    dgvCash.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00"));//
+                    dgvCash.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), itemTotal.ToString("#,##0.00"));
                     hascart = true;
                 }
                 dr.Close();
@@ -164,19 +144,14 @@ namespace POSales
             {
                 MessageBox.Show(ex.Message, stitle);
             }
-        
         }
 
         public void GetCartTotal()
         {
             double discount = double.Parse(lblDiscount.Text);
-            double sales = double.Parse(lblSaleTotal.Text) - discount;
-            double vat = sales * 0.12;//VAT: 12% of VAT Payable (Output Tax less Input Tax)
-            double vatable = sales - vat;
+            double sales = double.Parse(lblSaleTotal.Text);
 
-            lblVat.Text = vat.ToString("#,##0.00");
-            lblVatable.Text = vatable.ToString("#,##0.00");
-            lblDisplayTotal.Text = sales.ToString("#,##0.00");
+            lblDisplayTotal.Text = (sales - discount).ToString("#,##0.00");
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

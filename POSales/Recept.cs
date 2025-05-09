@@ -66,8 +66,6 @@ namespace POSales
                 da.Fill(ds.Tables["dtRecept"]);
                 cn.Close();
 
-                ReportParameter pVatable = new ReportParameter("pVatable", cashier.lblVatable.Text);
-                ReportParameter pVat = new ReportParameter("pVat", cashier.lblVat.Text);
                 ReportParameter pDiscount = new ReportParameter("pDiscount", cashier.lblDiscount.Text);
                 ReportParameter pTotal = new ReportParameter("pTotal", cashier.lblDisplayTotal.Text);
                 ReportParameter pCash = new ReportParameter("pCash", pcash);
@@ -76,9 +74,8 @@ namespace POSales
                 ReportParameter pAddress = new ReportParameter("pAddress", address);
                 ReportParameter pTransaction = new ReportParameter("pTransaction", "Invoice #: " + cashier.lblTranNo.Text);
                 ReportParameter pCashier = new ReportParameter("pCashier", cashier.lblUsername.Text);
+                ReportParameter pSale = new ReportParameter("pSale", cashier.lblSaleTotal.Text);
 
-                reportViewer1.LocalReport.SetParameters(pVatable);
-                reportViewer1.LocalReport.SetParameters(pVat);
                 reportViewer1.LocalReport.SetParameters(pDiscount);
                 reportViewer1.LocalReport.SetParameters(pTotal);
                 reportViewer1.LocalReport.SetParameters(pCash);
@@ -87,6 +84,7 @@ namespace POSales
                 reportViewer1.LocalReport.SetParameters(pAddress);
                 reportViewer1.LocalReport.SetParameters(pTransaction);
                 reportViewer1.LocalReport.SetParameters(pCashier);
+                reportViewer1.LocalReport.SetParameters(pSale);
 
                 rptDataSourece = new ReportDataSource("DataSet1", ds.Tables["dtRecept"]);
                 reportViewer1.LocalReport.DataSources.Add(rptDataSourece);
@@ -94,14 +92,12 @@ namespace POSales
                 reportViewer1.ZoomMode = ZoomMode.Percent;
                 reportViewer1.ZoomPercent = 30;
 
-
             }
             catch (Exception ex)
             {
                 cn.Close();
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void Recept_KeyDown(object sender, KeyEventArgs e)

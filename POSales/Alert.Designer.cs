@@ -46,6 +46,7 @@ namespace POSales
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightPink;
             this.panel1.Controls.Add(this.lblPcode);
             this.panel1.Controls.Add(this.lblMsg);
             this.panel1.Controls.Add(this.btnClose);
@@ -59,16 +60,17 @@ namespace POSales
             // lblPcode
             // 
             this.lblPcode.AutoSize = true;
+            this.lblPcode.ForeColor = System.Drawing.Color.Pink;
             this.lblPcode.Location = new System.Drawing.Point(343, 54);
             this.lblPcode.Name = "lblPcode";
-            this.lblPcode.Size = new System.Drawing.Size(20, 17);
+            this.lblPcode.Size = new System.Drawing.Size(18, 16);
             this.lblPcode.TabIndex = 7;
             this.lblPcode.Text = "lb";
             this.lblPcode.Visible = false;
             // 
             // lblMsg
             // 
-            this.lblMsg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsg.ForeColor = System.Drawing.Color.White;
             this.lblMsg.Location = new System.Drawing.Point(73, 4);
             this.lblMsg.Name = "lblMsg";
@@ -105,12 +107,12 @@ namespace POSales
             // 
             // Alert
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(370, 75);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Alert";

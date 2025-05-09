@@ -86,8 +86,8 @@ namespace POSales
             // 
             // btnSeven
             // 
-            this.btnSeven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnSeven.ForeColor = System.Drawing.Color.White;
+            this.btnSeven.BackColor = System.Drawing.Color.LightPink;
+            this.btnSeven.ForeColor = System.Drawing.Color.Black;
             this.btnSeven.Location = new System.Drawing.Point(12, 130);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(50, 50);
@@ -98,8 +98,8 @@ namespace POSales
             // 
             // btnEight
             // 
-            this.btnEight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnEight.ForeColor = System.Drawing.Color.White;
+            this.btnEight.BackColor = System.Drawing.Color.LightPink;
+            this.btnEight.ForeColor = System.Drawing.Color.Black;
             this.btnEight.Location = new System.Drawing.Point(68, 130);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(50, 50);
@@ -110,8 +110,8 @@ namespace POSales
             // 
             // btnNine
             // 
-            this.btnNine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnNine.ForeColor = System.Drawing.Color.White;
+            this.btnNine.BackColor = System.Drawing.Color.LightPink;
+            this.btnNine.ForeColor = System.Drawing.Color.Black;
             this.btnNine.Location = new System.Drawing.Point(124, 130);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(50, 50);
@@ -122,8 +122,8 @@ namespace POSales
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.BackColor = System.Drawing.Color.LightPink;
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(180, 130);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 50);
@@ -134,8 +134,8 @@ namespace POSales
             // 
             // btnFour
             // 
-            this.btnFour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnFour.ForeColor = System.Drawing.Color.White;
+            this.btnFour.BackColor = System.Drawing.Color.LightPink;
+            this.btnFour.ForeColor = System.Drawing.Color.Black;
             this.btnFour.Location = new System.Drawing.Point(12, 186);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(50, 50);
@@ -146,8 +146,8 @@ namespace POSales
             // 
             // btnFive
             // 
-            this.btnFive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnFive.ForeColor = System.Drawing.Color.White;
+            this.btnFive.BackColor = System.Drawing.Color.LightPink;
+            this.btnFive.ForeColor = System.Drawing.Color.Black;
             this.btnFive.Location = new System.Drawing.Point(68, 186);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(50, 50);
@@ -158,8 +158,8 @@ namespace POSales
             // 
             // btnSix
             // 
-            this.btnSix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnSix.ForeColor = System.Drawing.Color.White;
+            this.btnSix.BackColor = System.Drawing.Color.LightPink;
+            this.btnSix.ForeColor = System.Drawing.Color.Black;
             this.btnSix.Location = new System.Drawing.Point(124, 186);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(50, 50);
@@ -170,8 +170,8 @@ namespace POSales
             // 
             // btnZero
             // 
-            this.btnZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnZero.ForeColor = System.Drawing.Color.White;
+            this.btnZero.BackColor = System.Drawing.Color.LightPink;
+            this.btnZero.ForeColor = System.Drawing.Color.Black;
             this.btnZero.Location = new System.Drawing.Point(180, 186);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(50, 50);
@@ -182,8 +182,8 @@ namespace POSales
             // 
             // btnOne
             // 
-            this.btnOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnOne.ForeColor = System.Drawing.Color.White;
+            this.btnOne.BackColor = System.Drawing.Color.LightPink;
+            this.btnOne.ForeColor = System.Drawing.Color.Black;
             this.btnOne.Location = new System.Drawing.Point(12, 242);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(50, 50);
@@ -194,8 +194,8 @@ namespace POSales
             // 
             // btnTwo
             // 
-            this.btnTwo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnTwo.ForeColor = System.Drawing.Color.White;
+            this.btnTwo.BackColor = System.Drawing.Color.LightPink;
+            this.btnTwo.ForeColor = System.Drawing.Color.Black;
             this.btnTwo.Location = new System.Drawing.Point(68, 242);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(50, 50);
@@ -206,8 +206,8 @@ namespace POSales
             // 
             // btnThree
             // 
-            this.btnThree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnThree.ForeColor = System.Drawing.Color.White;
+            this.btnThree.BackColor = System.Drawing.Color.LightPink;
+            this.btnThree.ForeColor = System.Drawing.Color.Black;
             this.btnThree.Location = new System.Drawing.Point(124, 242);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(50, 50);
@@ -218,8 +218,8 @@ namespace POSales
             // 
             // btnDZero
             // 
-            this.btnDZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnDZero.ForeColor = System.Drawing.Color.White;
+            this.btnDZero.BackColor = System.Drawing.Color.LightPink;
+            this.btnDZero.ForeColor = System.Drawing.Color.Black;
             this.btnDZero.Location = new System.Drawing.Point(180, 242);
             this.btnDZero.Name = "btnDZero";
             this.btnDZero.Size = new System.Drawing.Size(50, 50);
@@ -230,8 +230,8 @@ namespace POSales
             // 
             // btnEnter
             // 
-            this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnEnter.ForeColor = System.Drawing.Color.White;
+            this.btnEnter.BackColor = System.Drawing.Color.LightPink;
+            this.btnEnter.ForeColor = System.Drawing.Color.Black;
             this.btnEnter.Location = new System.Drawing.Point(12, 298);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(218, 50);
@@ -242,8 +242,9 @@ namespace POSales
             // 
             // Settle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(245, 361);
             this.Controls.Add(this.btnDZero);
             this.Controls.Add(this.btnZero);
@@ -261,7 +262,7 @@ namespace POSales
             this.Controls.Add(this.txtChange);
             this.Controls.Add(this.txtCash);
             this.Controls.Add(this.txtSale);
-            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;

@@ -27,7 +27,7 @@ namespace POSales
             LoadCashier();
         }
 
-        private void picClose_Click(object sender, EventArgs e)
+        public void picClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
@@ -146,11 +146,16 @@ namespace POSales
                 cancel.txtDisc.Text = dgvSold.Rows[e.RowIndex].Cells[7].Value.ToString();
                 cancel.txtTotal.Text = dgvSold.Rows[e.RowIndex].Cells[8].Value.ToString();
                 if(lblTitle.Visible==false)
-                    cancel.txtCancelBy.Text = main.lblUsername.Text;
+                    cancel.txtCancelBy.Text = main.lblName.Text;
                 else
                     cancel.txtCancelBy.Text = solduser;
                 cancel.ShowDialog();
             }
+        }
+
+        public void picClose_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

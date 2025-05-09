@@ -24,7 +24,6 @@ namespace POSales
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             main = mn;
-            LoadSupplier();
             GetRefeNo();
             txtStockInBy.Text = main.lblUsername.Text;
         }
@@ -34,28 +33,6 @@ namespace POSales
             Random rnd = new Random();
             txtRefNo.Clear();
             txtRefNo.Text += rnd.Next();
-        }
-
-        public void LoadSupplier()
-        {
-            cbSupplier.Items.Clear();
-            cbSupplier.DataSource =dbcon.getTable("SELECT * FROM tbSupplier");
-            cbSupplier.DisplayMember = "supplier";
-        }
-
-        public void ProductForSupplier(string pcode)
-        {
-            string supplier = "";
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM vwStockIn WHERE pcode LIKE '" + pcode + "'", cn);
-            dr = cm.ExecuteReader();
-            while(dr.Read())
-            {
-                supplier = dr["supplier"].ToString();
-            }
-            dr.Close();
-            cn.Close();
-            cbSupplier.Text = supplier;
         }
 
         public void LoadStockIn()
@@ -180,21 +157,5 @@ namespace POSales
             }
         }
 
-        private void cbSupplier_TextChanged(object sender, EventArgs e)
-        {
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tbSupplier WHERE supplier LIKE '" + cbSupplier.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            dr.Read();
-            if (dr.HasRows)
-            {
-                lblId.Text = dr["id"].ToString();
-                txtConPerson.Text = dr["contactperson"].ToString();
-                txtAddress.Text = dr["address"].ToString();
-
-            }
-            dr.Close();
-            cn.Close();
-        }
     }
 }

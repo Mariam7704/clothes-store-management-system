@@ -96,11 +96,6 @@ namespace POSales
             hideSubmenu();
         }
 
-        private void btnBrand_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Brand());
-            hideSubmenu();
-        }
 
         private void btnInStock_Click(object sender, EventArgs e)
         {
@@ -172,6 +167,13 @@ namespace POSales
             }
         }
 
+        private void btnDailySales_Click(object sender, EventArgs e)
+        {
+            hideSubmenu();
+            DailySale dailySale = new DailySale(this);
+            dailySale.ShowDialog();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             btnDashboard.PerformClick();
@@ -195,6 +197,11 @@ namespace POSales
             }
             dr.Close();
             cn.Close();
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

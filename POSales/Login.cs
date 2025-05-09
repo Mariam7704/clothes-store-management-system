@@ -73,7 +73,7 @@ namespace POSales
                     }
                     if(_role=="Cashier")
                     {
-                        MessageBox.Show("Welcome " + _name + " |", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Welcome " + _name, "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtName.Clear();
                         txtPass.Clear();
                         this.Hide();
@@ -84,7 +84,7 @@ namespace POSales
                     }
                     else
                     {
-                        MessageBox.Show("Welcome " + _name + " |", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Welcome " + _name, "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtName.Clear();
                         txtPass.Clear();
                         this.Hide();

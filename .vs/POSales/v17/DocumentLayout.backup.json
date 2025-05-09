@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\D\\College\\Advanced Software Engineering\\project\\clothes-store-management-system\\",
+  "WorkspaceRootPath": "C:\\D\\Project - Copy\\Project - Copy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\college\\advanced software engineering\\project\\clothes-store-management-system\\posales\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DBConnect.cs",
-              "DocumentMoniker": "C:\\D\\College\\Advanced Software Engineering\\project\\clothes-store-management-system\\POSales\\DBConnect.cs",
-              "RelativeDocumentMoniker": "POSales\\DBConnect.cs",
-              "ToolTip": "C:\\D\\College\\Advanced Software Engineering\\project\\clothes-store-management-system\\POSales\\DBConnect.cs",
-              "RelativeToolTip": "POSales\\DBConnect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
+              "RelativeDocumentMoniker": "POSales\\Dashboard.cs",
+              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
+              "RelativeToolTip": "POSales\\Dashboard.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwB0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T00:06:09.184Z",
+              "WhenOpened": "2025-05-09T04:38:21.84Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
+              "RelativeDocumentMoniker": "POSales\\Dashboard.cs",
+              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs [Design]",
+              "RelativeToolTip": "POSales\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T04:32:27.741Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

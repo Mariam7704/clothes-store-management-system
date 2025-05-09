@@ -30,7 +30,7 @@ namespace POSales
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccount));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
@@ -84,7 +84,7 @@ namespace POSales
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+            this.panel1.BackColor = System.Drawing.Color.LightPink;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 481);
@@ -94,13 +94,13 @@ namespace POSales
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 43);
+            this.label1.Size = new System.Drawing.Size(136, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Setting";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,7 +134,7 @@ namespace POSales
             this.metroTabPage1.Controls.Add(this.label2);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 3;
+            this.metroTabPage1.HorizontalScrollbarSize = 2;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(920, 410);
@@ -142,7 +142,7 @@ namespace POSales
             this.metroTabPage1.Text = "Create Account";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 3;
+            this.metroTabPage1.VerticalScrollbarSize = 2;
             // 
             // btnAccSave
             // 
@@ -178,7 +178,7 @@ namespace POSales
             // 
             this.txtName.Location = new System.Drawing.Point(265, 273);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(527, 26);
+            this.txtName.Size = new System.Drawing.Size(527, 24);
             this.txtName.TabIndex = 5;
             // 
             // cbRole
@@ -189,14 +189,14 @@ namespace POSales
             "Cashier"});
             this.cbRole.Location = new System.Drawing.Point(265, 220);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(527, 28);
+            this.cbRole.Size = new System.Drawing.Size(527, 26);
             this.cbRole.TabIndex = 4;
             // 
             // txtRePass
             // 
             this.txtRePass.Location = new System.Drawing.Point(265, 169);
             this.txtRePass.Name = "txtRePass";
-            this.txtRePass.Size = new System.Drawing.Size(527, 26);
+            this.txtRePass.Size = new System.Drawing.Size(527, 24);
             this.txtRePass.TabIndex = 3;
             this.txtRePass.UseSystemPasswordChar = true;
             // 
@@ -204,7 +204,7 @@ namespace POSales
             // 
             this.txtPass.Location = new System.Drawing.Point(265, 118);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(527, 26);
+            this.txtPass.Size = new System.Drawing.Size(527, 24);
             this.txtPass.TabIndex = 3;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -212,7 +212,7 @@ namespace POSales
             // 
             this.txtUsername.Location = new System.Drawing.Point(265, 67);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(527, 26);
+            this.txtUsername.Size = new System.Drawing.Size(527, 24);
             this.txtUsername.TabIndex = 3;
             // 
             // label6
@@ -220,7 +220,7 @@ namespace POSales
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(95, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 20);
+            this.label6.Size = new System.Drawing.Size(83, 18);
             this.label6.TabIndex = 2;
             this.label6.Text = "Full Name :";
             // 
@@ -229,7 +229,7 @@ namespace POSales
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(95, 223);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(47, 18);
             this.label5.TabIndex = 2;
             this.label5.Text = "Role :";
             // 
@@ -238,7 +238,7 @@ namespace POSales
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(95, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 20);
+            this.label4.Size = new System.Drawing.Size(138, 18);
             this.label4.TabIndex = 2;
             this.label4.Text = "Re-type Password :";
             // 
@@ -247,7 +247,7 @@ namespace POSales
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(95, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password :";
             // 
@@ -256,7 +256,7 @@ namespace POSales
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(95, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(85, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username :";
             // 
@@ -275,7 +275,7 @@ namespace POSales
             this.metroTabPage2.Controls.Add(this.label8);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 3;
+            this.metroTabPage2.HorizontalScrollbarSize = 2;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(920, 410);
@@ -283,15 +283,15 @@ namespace POSales
             this.metroTabPage2.Text = "Change Password";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 3;
+            this.metroTabPage2.VerticalScrollbarSize = 2;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(176, 73);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(82, 18);
+            this.lblUsername.Size = new System.Drawing.Size(85, 18);
             this.lblUsername.TabIndex = 36;
             this.lblUsername.Text = "Username";
             // 
@@ -338,7 +338,7 @@ namespace POSales
             // 
             this.txtRePass2.Location = new System.Drawing.Point(280, 234);
             this.txtRePass2.Name = "txtRePass2";
-            this.txtRePass2.Size = new System.Drawing.Size(527, 26);
+            this.txtRePass2.Size = new System.Drawing.Size(527, 24);
             this.txtRePass2.TabIndex = 11;
             this.txtRePass2.UseSystemPasswordChar = true;
             // 
@@ -347,7 +347,7 @@ namespace POSales
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(110, 237);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 20);
+            this.label10.Size = new System.Drawing.Size(138, 18);
             this.label10.TabIndex = 10;
             this.label10.Text = "Re-type Password :";
             // 
@@ -355,7 +355,7 @@ namespace POSales
             // 
             this.txtNPass.Location = new System.Drawing.Point(280, 176);
             this.txtNPass.Name = "txtNPass";
-            this.txtNPass.Size = new System.Drawing.Size(527, 26);
+            this.txtNPass.Size = new System.Drawing.Size(527, 24);
             this.txtNPass.TabIndex = 9;
             this.txtNPass.UseSystemPasswordChar = true;
             // 
@@ -364,7 +364,7 @@ namespace POSales
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(110, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 20);
+            this.label9.Size = new System.Drawing.Size(117, 18);
             this.label9.TabIndex = 8;
             this.label9.Text = "New Password :";
             // 
@@ -372,7 +372,7 @@ namespace POSales
             // 
             this.txtCurPass.Location = new System.Drawing.Point(280, 121);
             this.txtCurPass.Name = "txtCurPass";
-            this.txtCurPass.Size = new System.Drawing.Size(527, 26);
+            this.txtCurPass.Size = new System.Drawing.Size(527, 24);
             this.txtCurPass.TabIndex = 7;
             this.txtCurPass.UseSystemPasswordChar = true;
             // 
@@ -381,19 +381,20 @@ namespace POSales
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(110, 124);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 20);
+            this.label8.Size = new System.Drawing.Size(136, 18);
             this.label8.TabIndex = 6;
             this.label8.Text = "Current Password :";
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.BackColor = System.Drawing.Color.Snow;
             this.metroTabPage3.Controls.Add(this.gbUser);
             this.metroTabPage3.Controls.Add(this.btnProperties);
             this.metroTabPage3.Controls.Add(this.btnRemove);
             this.metroTabPage3.Controls.Add(this.dgvUser);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 3;
+            this.metroTabPage3.HorizontalScrollbarSize = 2;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
             this.metroTabPage3.Size = new System.Drawing.Size(920, 410);
@@ -401,11 +402,11 @@ namespace POSales
             this.metroTabPage3.Text = "Activate/ UnActivate Account";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 3;
+            this.metroTabPage3.VerticalScrollbarSize = 2;
             // 
             // gbUser
             // 
-            this.gbUser.BackColor = System.Drawing.Color.White;
+            this.gbUser.BackColor = System.Drawing.Color.Snow;
             this.gbUser.Controls.Add(this.pictureBox2);
             this.gbUser.Controls.Add(this.lblAccNote);
             this.gbUser.Controls.Add(this.btnResetPass);
@@ -430,7 +431,7 @@ namespace POSales
             this.lblAccNote.AutoSize = true;
             this.lblAccNote.Location = new System.Drawing.Point(103, 27);
             this.lblAccNote.Name = "lblAccNote";
-            this.lblAccNote.Size = new System.Drawing.Size(453, 20);
+            this.lblAccNote.Size = new System.Drawing.Size(419, 18);
             this.lblAccNote.TabIndex = 0;
             this.lblAccNote.Text = "To change the password for username, click Reset Password.";
             // 
@@ -481,16 +482,16 @@ namespace POSales
             this.dgvUser.AllowUserToAddRows = false;
             this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUser.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUser.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightPink;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUser.ColumnHeadersHeight = 30;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -512,14 +513,14 @@ namespace POSales
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "No";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 53;
+            this.Column1.Width = 51;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column2.HeaderText = "User Name";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 112;
+            this.Column2.Width = 107;
             // 
             // Column3
             // 
@@ -532,25 +533,25 @@ namespace POSales
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.HeaderText = "Account Activate";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 164;
+            this.Column5.Width = 140;
             // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column4.HeaderText = "Role";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 64;
+            this.Column4.Width = 62;
             // 
             // UserAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.ControlBox = false;
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserAccount";
