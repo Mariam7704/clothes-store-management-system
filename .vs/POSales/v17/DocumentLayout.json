@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\D\\Project - Copy\\Project - Copy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|c:\\d\\project - copy\\project - copy\\posales\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3F11B4E-1B68-4FC6-ADEB-BB93F1BB5C34}|POSales\\POSales.csproj|solutionrelative:posales\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dashboard.cs",
-              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
-              "RelativeDocumentMoniker": "POSales\\Dashboard.cs",
-              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
-              "RelativeToolTip": "POSales\\Dashboard.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAkwBwAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Cashier.Designer.cs",
+              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.Designer.cs",
+              "RelativeDocumentMoniker": "POSales\\Cashier.Designer.cs",
+              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.Designer.cs",
+              "RelativeToolTip": "POSales\\Cashier.Designer.cs",
+              "ViewState": "AgIAAHoBAAAAAAAAAAAswIcBAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T04:38:21.84Z",
+              "WhenOpened": "2025-05-09T22:16:44.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cashier.cs",
+              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.cs",
+              "RelativeDocumentMoniker": "POSales\\Cashier.cs",
+              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.cs",
+              "RelativeToolTip": "POSales\\Cashier.cs",
+              "ViewState": "AgIAAIQBAAAAAAAAAAAWwI8BAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T22:16:34.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dashboard.cs [Design]",
-              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs",
-              "RelativeDocumentMoniker": "POSales\\Dashboard.cs",
-              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Dashboard.cs [Design]",
-              "RelativeToolTip": "POSales\\Dashboard.cs [Design]",
+              "Title": "Cashier.cs [Design]",
+              "DocumentMoniker": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.cs",
+              "RelativeDocumentMoniker": "POSales\\Cashier.cs",
+              "ToolTip": "C:\\D\\Project - Copy\\Project - Copy\\POSales\\Cashier.cs [Design]",
+              "RelativeToolTip": "POSales\\Cashier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T04:32:27.741Z",
+              "WhenOpened": "2025-05-09T22:16:29.215Z",
               "EditorCaption": " [Design]"
             }
           ]

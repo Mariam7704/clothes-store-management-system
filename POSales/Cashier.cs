@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using DarrenLee.Media;
 
 namespace POSales
 {
@@ -21,6 +23,8 @@ namespace POSales
         int qty;
         string id;
         string price;
+
+        Camera captureDevice = new Camera();
             
         string stitle = "Point Of Sales";
         public Cashier()
@@ -373,6 +377,35 @@ namespace POSales
         private void Cashier_Load(object sender, EventArgs e)
         {
             Noti();
+        }
+
+        private void Cashier_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F8)
+            {
+                captureDevice.OnFrameArrived += captureDevice_OnFrameArrived;
+                captureDevice.Start();
+            }
+        }
+
+        private void captureDevice_OnFrameArrived(object source, FrameArrivedEventArgs e)
+        {
+            Bitmap bitmap = (Bitmap)e.GetFrame();
+            BarcodeReader barcodeReader = new BarcodeReader();
+            Result result = barcodeReader.Decode(bitmap);
+
+            if (result != null)
+            {
+                txtBarcode.Invoke(new MethodInvoker(delegate ()
+                {
+                    txtBarcode.Text = result.Text;
+                }));
+            }
+        }
+
+        private void Cashier_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            captureDevice.Stop();
         }
     }
 }

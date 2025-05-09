@@ -317,6 +317,10 @@ C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\rptRecept.rdlc
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\POSales.exe.config
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\POSales.exe
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\POSales.pdb
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.Video.DirectShow.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.Video.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\DarrenLee.Media.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\MetroFramework.Design.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\MetroFramework.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\MetroFramework.Fonts.dll
@@ -327,8 +331,15 @@ C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\Microsoft.ReportViewer.Proc
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\zxing.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\zxing.presentation.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\EnvDTE.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\stdole.dll
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.xml
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.Video.xml
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\AForge.Video.DirectShow.xml
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\zxing.xml
+C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\zxing.presentation.xml
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 C:\D\Project - Copy\Project - Copy\POSales\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
