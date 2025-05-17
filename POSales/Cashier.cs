@@ -109,7 +109,8 @@ namespace POSales
             {
                 this.Hide();
                 Login login = new Login();
-                login.ShowDialog();
+                login.Show();
+                this.Close();
             }
         }
         #endregion button
@@ -119,12 +120,13 @@ namespace POSales
             try
             {
                 Boolean hascart = false;
+                Boolean hasCustomer = false;
                 int i = 0;
                 double total = 0;
                 double discount = 0;
                 dgvCash.Rows.Clear();
                 cn.Open();
-                cm = new SqlCommand("SELECT c.id, c.pcode, p.pdesc, c.price, c.qty, c.disc, c.total FROM tbCart AS c INNER JOIN tbProduct AS p ON c.pcode=p.pcode WHERE c.transno LIKE @transno and c.status LIKE 'Pending'", cn);
+                cm = new SqlCommand("SELECT c.id, c.pcode, p.pdesc, c.price, c.qty, c.disc, c.total, c.customer_id FROM tbCart AS c INNER JOIN tbProduct AS p ON c.pcode=p.pcode WHERE c.transno LIKE @transno and c.status LIKE 'Pending'", cn);
                 cm.Parameters.AddWithValue("@transno", lblTranNo.Text);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
@@ -135,14 +137,29 @@ namespace POSales
                     discount += Convert.ToDouble(dr["disc"].ToString());
                     dgvCash.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), itemTotal.ToString("#,##0.00"));
                     hascart = true;
+                    // Check if customer is selected
+                    if (dr["customer_id"] != DBNull.Value && !string.IsNullOrEmpty(dr["customer_id"].ToString()))
+                    {
+                        hasCustomer = true;
+                    }
                 }
                 dr.Close();
                 cn.Close();
                 lblSaleTotal.Text = total.ToString("#,##0.00");
                 lblDiscount.Text = discount.ToString("#,##0.00");
                 GetCartTotal();
-                if (hascart) { btnClear.Enabled = true; btnSettle.Enabled = true; btnDiscount.Enabled = true; }
-                else { btnClear.Enabled = false; btnSettle.Enabled = false; btnDiscount.Enabled = false; }
+                if (hascart) 
+                { 
+                    btnClear.Enabled = true; 
+                    btnDiscount.Enabled = true;
+                    btnSettle.Enabled = hasCustomer; // Enable settle only if customer is selected
+                }
+                else 
+                { 
+                    btnClear.Enabled = false; 
+                    btnSettle.Enabled = false; 
+                    btnDiscount.Enabled = false; 
+                }
             }
             catch (Exception ex)
             {
@@ -339,21 +356,40 @@ namespace POSales
             }
             else if (colName == "colReduce")
             {
-                int i = 0;
-                cn.Open();
-                cm = new SqlCommand("SELECT SUM(qty) as qty FROM tbCart WHERE pcode LIKE'" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
-                i = int.Parse(cm.ExecuteScalar().ToString());
-                cn.Close();
-                if (i > 1)
+                int currentQty = int.Parse(dgvCash.Rows[e.RowIndex].Cells[5].Value.ToString());
+                int reduceAmount = int.Parse(txtQty.Text);
+                
+                // Check if reduce amount is valid
+                if (reduceAmount <= 0)
                 {
-                    dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty - " + int.Parse(txtQty.Text) + " WHERE transno LIKE '" + lblTranNo.Text + "'  AND pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
-                    LoadCart();
-                }
-                else
-                {
-                    MessageBox.Show("Remaining qty on cart is " + i + "!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid quantity to reduce", "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                // Check if reducing would result in 0 or negative quantity
+                if (currentQty <= reduceAmount)
+                {
+                    MessageBox.Show("Cannot reduce quantity below 1", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Get stock on hand
+                cn.Open();
+                cm = new SqlCommand("SELECT qty FROM tbProduct WHERE pcode LIKE @pcode", cn);
+                cm.Parameters.AddWithValue("@pcode", dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString());
+                int stockOnHand = int.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+
+                // Check if reduced quantity would exceed stock on hand
+                if ((currentQty - reduceAmount) > stockOnHand)
+                {
+                    MessageBox.Show($"Cannot reduce quantity. Stock on hand is {stockOnHand}", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Proceed with reduction
+                dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty - " + reduceAmount + " WHERE transno LIKE '" + lblTranNo.Text + "' AND pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+                LoadCart();
             }
         }
 
@@ -406,6 +442,11 @@ namespace POSales
         private void Cashier_FormClosing(object sender, FormClosingEventArgs e)
         {
             captureDevice.Stop();
+        }
+
+        public void EnableSettleButton(bool enable)
+        {
+            btnSettle.Enabled = enable;
         }
     }
 }

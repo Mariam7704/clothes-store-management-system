@@ -53,11 +53,11 @@ namespace POSales
             string colName = dgvProduct.Columns[e.ColumnIndex].Name;
             if (colName == "Select")
             {
-                if(stockIn.txtStockInBy.Text == string.Empty)
+                if (stockIn.txtStockInBy.Text == string.Empty)
                 {
                     MessageBox.Show("Please enter stock in by name", stitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     stockIn.txtStockInBy.Focus();
-                    this.Dispose();                                        
+                    this.Dispose();
                 }
 
                 if (MessageBox.Show("Add this item?", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -79,11 +79,11 @@ namespace POSales
                 cm.Parameters.AddWithValue("@pcode", pcode);
                 cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
                 cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
-                cm.Parameters.AddWithValue("@supplierid", stockIn.lblId.Text);
+                cm.Parameters.AddWithValue("@supplierid", 1);
                 cm.ExecuteNonQuery();
                 cn.Close();
                 stockIn.LoadStockIn();
-                
+
             }
             catch (Exception ex)
             {

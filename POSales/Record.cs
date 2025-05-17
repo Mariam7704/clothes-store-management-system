@@ -21,12 +21,30 @@ namespace POSales
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            SetupComboBoxes();
             LoadCriticalItems();
             LoadInventoryList();
+            metroTabControl1.TabPages.Remove(tabPage6);
+        }
+
+        private void SetupComboBoxes()
+        {
+            cbTopSell.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTopSell.Items.Clear();
+            cbTopSell.Items.Add("Select sort type");
+            cbTopSell.Items.Add("Sort By Qty");
+            cbTopSell.Items.Add("Sort By Total Amount");
+            cbTopSell.SelectedIndex = 0;
         }
 
         public void LoadTopSelling()
         {
+            if (cbTopSell.Text == "Select sort type")
+            {
+                MessageBox.Show("Please select sort type from the dropdown list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbTopSell.Focus();
+                return;
+            }
             int i = 0;
             dgvTopSelling.Rows.Clear();
             cn.Open();

@@ -178,7 +178,7 @@ namespace POSales
                     
                     // Update tbCart with customer_id
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tbCart SET customer_id = @customer_id WHERE transno = @transno", cn);
+                    cm = new SqlCommand("UPDATE tbCart SET customer_id = @customer_id WHERE transno = @transno AND status = 'Pending'", cn);
                     cm.Parameters.AddWithValue("@customer_id", customerId);
                     cm.Parameters.AddWithValue("@transno", cashier.lblTranNo.Text);
                     cm.ExecuteNonQuery();
@@ -186,12 +186,13 @@ namespace POSales
 
                     // Apply 10% discount for existing customers
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tbCart SET disc_percent = 10 WHERE transno = @transno", cn);
+                    cm = new SqlCommand("UPDATE tbCart SET disc_percent = 10 WHERE transno = @transno AND status = 'Pending'", cn);
                     cm.Parameters.AddWithValue("@transno", cashier.lblTranNo.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
-                    cashier.LoadCart();
+                    cashier.LoadCart(); // This will now check for customer_id and enable settle button
+                    cashier.EnableSettleButton(true); // Explicitly enable settle button
                     this.Dispose();
                 }
                 else
@@ -229,7 +230,39 @@ namespace POSales
             }
         }
 
-
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvCustomers.Rows.Count > 0)
+                {
+                    if (dgvCustomers.SelectedRows.Count > 0)
+                    {
+                        int i = dgvCustomers.SelectedRows[0].Index;
+                        if (dgvCustomers[0, i].Value != null)
+                        {
+                            cn.Open();
+                            cm = new SqlCommand("UPDATE tbCart SET customer_id = @customer_id WHERE transno LIKE @transno AND status LIKE 'Pending'", cn);
+                            cm.Parameters.AddWithValue("@customer_id", dgvCustomers[0, i].Value.ToString());
+                            cm.Parameters.AddWithValue("@transno", cashier.lblTranNo.Text);
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+                            MessageBox.Show("Customer has been selected!", stitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Dispose();
+                            cashier.EnableSettleButton(true);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a customer!", stitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, stitle);
+            }
+        }
     }
 
     public class CustomerEntry : Form
@@ -349,15 +382,42 @@ namespace POSales
             this.Name = "CustomerEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Customer";
+            // Add event handlers for input validation
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            // Validate customer name (only letters and spaces)
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Please enter customer name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }
+
+            if (!txtName.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+            {
+                MessageBox.Show("Customer name must contain only letters and spaces", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }
+
+            // Validate phone number (exactly 11 digits)
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Please enter phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPhone.Focus();
+                return;
+            }
+
+            if (txtPhone.Text.Length != 11 || !txtPhone.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Phone number must be exactly 11 digits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPhone.Focus();
                 return;
             }
 
@@ -365,6 +425,30 @@ namespace POSales
             Phone = txtPhone.Text;
             Email = txtEmail.Text;
             DialogResult = DialogResult.OK;
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow letters and spaces
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow digits and control characters
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Limit to 11 characters
+            if (!char.IsControl(e.KeyChar) && txtPhone.Text.Length >= 11)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

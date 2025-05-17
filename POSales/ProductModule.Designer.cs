@@ -88,7 +88,7 @@ namespace POSales
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Module";
             // 
@@ -127,7 +127,7 @@ namespace POSales
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
+            this.label2.Size = new System.Drawing.Size(136, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "Product Code :";
             // 
@@ -135,7 +135,7 @@ namespace POSales
             // 
             this.txtPcode.Location = new System.Drawing.Point(163, 86);
             this.txtPcode.Name = "txtPcode";
-            this.txtPcode.Size = new System.Drawing.Size(194, 24);
+            this.txtPcode.Size = new System.Drawing.Size(194, 29);
             this.txtPcode.TabIndex = 8;
             // 
             // panel1
@@ -154,7 +154,7 @@ namespace POSales
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(376, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
+            this.label3.Size = new System.Drawing.Size(91, 24);
             this.label3.TabIndex = 10;
             this.label3.Text = "Barcode :";
             // 
@@ -163,7 +163,7 @@ namespace POSales
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(32, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 18);
+            this.label4.Size = new System.Drawing.Size(114, 24);
             this.label4.TabIndex = 10;
             this.label4.Text = "Description :";
             // 
@@ -172,34 +172,35 @@ namespace POSales
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(32, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.Size = new System.Drawing.Size(70, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "Brand :";
+            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 224);
+            this.label6.Location = new System.Drawing.Point(32, 178);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 18);
+            this.label6.Size = new System.Drawing.Size(95, 24);
             this.label6.TabIndex = 10;
             this.label6.Text = "Category :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 269);
+            this.label7.Location = new System.Drawing.Point(32, 223);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 18);
+            this.label7.Size = new System.Drawing.Size(63, 24);
             this.label7.TabIndex = 10;
             this.label7.Text = "Price :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(376, 269);
+            this.label8.Location = new System.Drawing.Point(376, 223);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 18);
+            this.label8.Size = new System.Drawing.Size(149, 24);
             this.label8.TabIndex = 10;
             this.label8.Text = "Re-Order Level :";
             // 
@@ -207,14 +208,14 @@ namespace POSales
             // 
             this.txtBarcode.Location = new System.Drawing.Point(510, 86);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(184, 24);
+            this.txtBarcode.Size = new System.Drawing.Size(184, 29);
             this.txtBarcode.TabIndex = 8;
             // 
             // txtPdesc
             // 
             this.txtPdesc.Location = new System.Drawing.Point(163, 130);
             this.txtPdesc.Name = "txtPdesc";
-            this.txtPdesc.Size = new System.Drawing.Size(531, 24);
+            this.txtPdesc.Size = new System.Drawing.Size(531, 29);
             this.txtPdesc.TabIndex = 8;
             // 
             // cboBrand
@@ -222,27 +223,28 @@ namespace POSales
             this.cboBrand.FormattingEnabled = true;
             this.cboBrand.Location = new System.Drawing.Point(163, 174);
             this.cboBrand.Name = "cboBrand";
-            this.cboBrand.Size = new System.Drawing.Size(531, 26);
+            this.cboBrand.Size = new System.Drawing.Size(531, 32);
             this.cboBrand.TabIndex = 14;
+            this.cboBrand.Visible = false;
             // 
             // cboCategory
             // 
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(163, 220);
+            this.cboCategory.Location = new System.Drawing.Point(163, 174);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(531, 26);
+            this.cboCategory.Size = new System.Drawing.Size(531, 32);
             this.cboCategory.TabIndex = 14;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(163, 266);
+            this.txtPrice.Location = new System.Drawing.Point(163, 220);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(194, 24);
+            this.txtPrice.Size = new System.Drawing.Size(194, 29);
             this.txtPrice.TabIndex = 15;
             // 
             // UDReOrder
             // 
-            this.UDReOrder.Location = new System.Drawing.Point(510, 266);
+            this.UDReOrder.Location = new System.Drawing.Point(510, 220);
             this.UDReOrder.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -254,7 +256,7 @@ namespace POSales
             0,
             0});
             this.UDReOrder.Name = "UDReOrder";
-            this.UDReOrder.Size = new System.Drawing.Size(184, 24);
+            this.UDReOrder.Size = new System.Drawing.Size(184, 29);
             this.UDReOrder.TabIndex = 16;
             this.UDReOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UDReOrder.Value = new decimal(new int[] {
@@ -265,7 +267,7 @@ namespace POSales
             // 
             // ProductModule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(764, 367);

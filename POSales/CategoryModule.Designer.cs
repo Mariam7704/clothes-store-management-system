@@ -29,9 +29,7 @@ namespace POSales
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryModule));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -40,30 +38,17 @@ namespace POSales
             this.btnSave = new System.Windows.Forms.Button();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightPink;
-            this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 50);
             this.panel1.TabIndex = 7;
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(687, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 35);
-            this.picClose.TabIndex = 1;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // label1
             // 
@@ -72,7 +57,7 @@ namespace POSales
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 20);
+            this.label1.Size = new System.Drawing.Size(181, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Module";
             // 
@@ -81,7 +66,7 @@ namespace POSales
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(12, 158);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(19, 18);
+            this.lblId.Size = new System.Drawing.Size(25, 24);
             this.lblId.TabIndex = 13;
             this.lblId.Text = "id";
             this.lblId.Visible = false;
@@ -121,7 +106,7 @@ namespace POSales
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 18);
+            this.label2.Size = new System.Drawing.Size(151, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "Category Name :";
             // 
@@ -144,12 +129,12 @@ namespace POSales
             // 
             this.txtCategory.Location = new System.Drawing.Point(159, 95);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(531, 24);
+            this.txtCategory.Size = new System.Drawing.Size(531, 29);
             this.txtCategory.TabIndex = 8;
             // 
             // CategoryModule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(716, 192);
@@ -170,7 +155,6 @@ namespace POSales
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CategoryModule_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +163,6 @@ namespace POSales
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblId;
         public System.Windows.Forms.Button btnCancel;

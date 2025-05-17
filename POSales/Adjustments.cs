@@ -27,7 +27,15 @@ namespace POSales
             ReferenceNo();
             LoadStock();
             lblUsername.Text = main.lblUsername.Text;
+            SetupActionComboBox();
+        }
 
+        private void SetupActionComboBox()
+        {
+            cbAction.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbAction.Items.Clear();
+            cbAction.Items.Add("Add To Inventory");
+            cbAction.Items.Add("Remove From Inventory");
         }
 
         public void ReferenceNo()
@@ -58,7 +66,7 @@ namespace POSales
             if(colName=="Select")
             {
                 lblPcode.Text = dgvAdjustment.Rows[e.RowIndex].Cells[1].Value.ToString();
-                lblDesc.Text = dgvAdjustment.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + dgvAdjustment.Rows[e.RowIndex].Cells[4].Value.ToString() + " " + dgvAdjustment.Rows[e.RowIndex].Cells[5].Value.ToString();
+                lblDesc.Text = dgvAdjustment.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + " " + dgvAdjustment.Rows[e.RowIndex].Cells[5].Value.ToString();
                 _qty = int.Parse(dgvAdjustment.Rows[e.RowIndex].Cells[7].Value.ToString());
                 btnSave.Enabled = true;
             }
@@ -75,8 +83,17 @@ namespace POSales
             lblPcode.Text = "";
             txtQty.Clear();
             txtRemark.Clear();
-            cbAction.Text = "";
+            cbAction.SelectedIndex = -1;
             ReferenceNo();
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow digits and control characters
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -84,21 +101,29 @@ namespace POSales
             try
             {
                 //validation for empty field
-                if(cbAction.Text=="")
+                if(cbAction.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please select action for add or reduce.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cbAction.Focus();
                     return;
                 }
 
-                if(txtQty.Text=="")
+                if(string.IsNullOrWhiteSpace(txtQty.Text))
                 {
-                    MessageBox.Show("Please input quantity  for add or reduce.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please input quantity for add or reduce.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtQty.Focus();
                     return;
                 }
 
-                if(txtRemark.Text=="")
+                int adjustmentQty = int.Parse(txtQty.Text);
+                if(adjustmentQty <= 0)
+                {
+                    MessageBox.Show("Quantity must be greater than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtQty.Focus();
+                    return;
+                }
+
+                if(string.IsNullOrWhiteSpace(txtRemark.Text))
                 {
                     MessageBox.Show("Need reason for stock adjustment.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtRemark.Focus();
@@ -106,21 +131,21 @@ namespace POSales
                 }
 
                 //update stock
-                if(int.Parse(txtQty.Text)>_qty)
+                if(cbAction.Text == "Remove From Inventory")
                 {
-                    MessageBox.Show("Stock on hand quantity should be greater than adjustment quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if(adjustmentQty > _qty)
+                    {
+                        MessageBox.Show($"Cannot remove {adjustmentQty} items. Stock on hand is only {_qty}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    dbcon.ExecuteQuery("UPDATE tbProduct SET qty = (qty - " + adjustmentQty + ") WHERE pcode LIKE '" + lblPcode.Text + "'");
                 }
-                if(cbAction.Text=="Remove From Inventory")
+                else if(cbAction.Text == "Add To Inventory")
                 {
-                    dbcon.ExecuteQuery("UPDATE tbProduct SET qty = (qty - " + int.Parse(txtQty.Text) + ") WHERE pcode LIKE '" + lblPcode.Text + "'");
-                }
-                else if(cbAction.Text=="Add To Inventory")
-                {
-                    dbcon.ExecuteQuery("UPDATE tbProduct SET qty = (qty + " + int.Parse(txtQty.Text) + ") WHERE pcode LIKE '" + lblPcode.Text + "'");
+                    dbcon.ExecuteQuery("UPDATE tbProduct SET qty = (qty + " + adjustmentQty + ") WHERE pcode LIKE '" + lblPcode.Text + "'");
                 }
 
-                dbcon.ExecuteQuery("INSERT INTO tbAdjustment(referenceno, pcode, qty, action, remarks, sdate, [user]) VALUES ('"+lblRefNo.Text+ "','" + lblPcode.Text + "','" + int.Parse(txtQty.Text) + "', '" + cbAction.Text + "', '" + txtRemark.Text + "', '" + DateTime.Now.ToShortDateString() + "','" + lblUsername.Text + "')");
+                dbcon.ExecuteQuery("INSERT INTO tbAdjustment(referenceno, pcode, qty, action, remarks, sdate, [user]) VALUES ('"+lblRefNo.Text+ "','" + lblPcode.Text + "','" + adjustmentQty + "', '" + cbAction.Text + "', '" + txtRemark.Text + "', '" + DateTime.Now.ToShortDateString() + "','" + lblUsername.Text + "')");
                 MessageBox.Show("Stock has been successfully adjusted.", "Process completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadStock();
                 Clear();

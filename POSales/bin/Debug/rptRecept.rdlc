@@ -852,7 +852,7 @@
       <Width>5.01042in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>1.28in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -923,7 +923,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Cashier :</Value>
+                      <Value>Cashier</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -933,7 +933,7 @@
               <rd:DefaultName>Textbox13</rd:DefaultName>
               <Top>0.60986in</Top>
               <Height>0.25in</Height>
-              <Width>0.60417in</Width>
+              <Width>0.72084in</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -961,10 +961,69 @@
               </Paragraphs>
               <rd:DefaultName>pCashier</rd:DefaultName>
               <Top>0.60986in</Top>
-              <Left>0.61806in</Left>
+              <Left>0.72084in</Left>
+              <Height>0.25in</Height>
+              <Width>1.03611in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox6">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Customer</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox6</rd:DefaultName>
+              <Top>0.90153in</Top>
+              <Height>0.25in</Height>
+              <Width>0.72084in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox8">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!pCustomer.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox8</rd:DefaultName>
+              <Top>0.90153in</Top>
+              <Left>0.72084in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1029,6 +1088,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="pCustomer">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1079,6 +1142,11 @@
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>2</RowIndex>
           <ParameterName>pSale</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pCustomer</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

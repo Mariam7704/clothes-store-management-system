@@ -25,6 +25,13 @@ namespace POSales
             product = pd;
             LoadBrand();
             LoadCategory();
+            SetupComboBoxes();
+        }
+
+        private void SetupComboBoxes()
+        {
+            cboBrand.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategory.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void LoadCategory()
@@ -33,6 +40,7 @@ namespace POSales
             cboCategory.DataSource = dbcon.getTable("SELECT * FROM tbCategory");
             cboCategory.DisplayMember = "category";
             cboCategory.ValueMember = "id";
+            cboCategory.SelectedIndex = -1;
         }
 
         public void LoadBrand()
@@ -41,6 +49,7 @@ namespace POSales
             cboBrand.DataSource = dbcon.getTable("SELECT * FROM tbBrand");
             cboBrand.DisplayMember = "brand";
             cboBrand.ValueMember = "id";
+            cboBrand.SelectedIndex = -1;
         }
 
         private void picClose_Click(object sender, EventArgs e)
@@ -67,15 +76,38 @@ namespace POSales
         {
             try
             {
+                // Validate price
+                if (string.IsNullOrWhiteSpace(txtPrice.Text))
+                {
+                    MessageBox.Show("Please enter a price.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
+                double price;
+                if (!double.TryParse(txtPrice.Text, out price))
+                {
+                    MessageBox.Show("Please enter a valid price.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
+                if (price <= 0)
+                {
+                    MessageBox.Show("Price must be greater than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure want to save this product?", "Save Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("INSERT INTO tbProduct(pcode, barcode, pdesc, bid, cid, price, reorder)VALUES (@pcode,@barcode,@pdesc,@bid,@cid,@price, @reorder)", cn);
                     cm.Parameters.AddWithValue("@pcode", txtPcode.Text);
                     cm.Parameters.AddWithValue("@barcode", txtBarcode.Text);
                     cm.Parameters.AddWithValue("@pdesc", txtPdesc.Text);
-                    cm.Parameters.AddWithValue("@bid", cboBrand.SelectedValue);
+                    cm.Parameters.AddWithValue("@bid", 1);
                     cm.Parameters.AddWithValue("@cid", cboCategory.SelectedValue);
-                    cm.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                    cm.Parameters.AddWithValue("@price", price);
                     cm.Parameters.AddWithValue("@reorder", UDReOrder.Value);
                     cn.Open();
                     cm.ExecuteNonQuery();
@@ -84,11 +116,9 @@ namespace POSales
                     Clear();
                     product.LoadProduct();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -102,15 +132,38 @@ namespace POSales
         {
             try
             {
+                // Validate price
+                if (string.IsNullOrWhiteSpace(txtPrice.Text))
+                {
+                    MessageBox.Show("Please enter a price.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
+                double price;
+                if (!double.TryParse(txtPrice.Text, out price))
+                {
+                    MessageBox.Show("Please enter a valid price.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
+                if (price <= 0)
+                {
+                    MessageBox.Show("Price must be greater than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPrice.Focus();
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure want to update this product?", "Update Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("UPDATE tbProduct SET barcode=@barcode,pdesc=@pdesc,bid=@bid,cid=@cid,price=@price, reorder=@reorder WHERE pcode LIKE @pcode", cn);
                     cm.Parameters.AddWithValue("@pcode", txtPcode.Text);
                     cm.Parameters.AddWithValue("@barcode", txtBarcode.Text);
                     cm.Parameters.AddWithValue("@pdesc", txtPdesc.Text);
-                    cm.Parameters.AddWithValue("@bid", cboBrand.SelectedValue);
+                    cm.Parameters.AddWithValue("@bid", 1);
                     cm.Parameters.AddWithValue("@cid", cboCategory.SelectedValue);
-                    cm.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                    cm.Parameters.AddWithValue("@price", price);
                     cm.Parameters.AddWithValue("@reorder", UDReOrder.Value);
                     cn.Open();
                     cm.ExecuteNonQuery();
@@ -119,12 +172,25 @@ namespace POSales
                     Clear();
                     this.Dispose();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, decimal point, and control characters
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
             }
         }
 

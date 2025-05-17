@@ -58,6 +58,18 @@ namespace POSales
                 this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptRecept.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
+                // Query customer name from the database using the transaction number
+                string custName = "";
+                cn.Open();
+                cm = new SqlCommand("SELECT TOP 1 cu.name FROM tbCart c INNER JOIN tbCustomer cu ON c.customer_id = cu.id WHERE c.transno LIKE '" + cashier.lblTranNo.Text + "'", cn);
+                dr = cm.ExecuteReader();
+                if (dr.Read())
+                {
+                    custName = dr["name"].ToString();
+                }
+                dr.Close();
+                cn.Close();
+                // end of customer addition
                 DataSet1 ds = new DataSet1();
                 SqlDataAdapter da = new SqlDataAdapter();
 
@@ -75,6 +87,7 @@ namespace POSales
                 ReportParameter pTransaction = new ReportParameter("pTransaction", "Invoice #: " + cashier.lblTranNo.Text);
                 ReportParameter pCashier = new ReportParameter("pCashier", cashier.lblUsername.Text);
                 ReportParameter pSale = new ReportParameter("pSale", cashier.lblSaleTotal.Text);
+                ReportParameter pCustomer = new ReportParameter("pCustomer", custName);
 
                 reportViewer1.LocalReport.SetParameters(pDiscount);
                 reportViewer1.LocalReport.SetParameters(pTotal);
@@ -85,6 +98,7 @@ namespace POSales
                 reportViewer1.LocalReport.SetParameters(pTransaction);
                 reportViewer1.LocalReport.SetParameters(pCashier);
                 reportViewer1.LocalReport.SetParameters(pSale);
+                reportViewer1.LocalReport.SetParameters(pCustomer);
 
                 rptDataSourece = new ReportDataSource("DataSet1", ds.Tables["dtRecept"]);
                 reportViewer1.LocalReport.DataSources.Add(rptDataSourece);

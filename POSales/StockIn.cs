@@ -24,6 +24,7 @@ namespace POSales
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             main = mn;
+            //LoadSupplier();
             GetRefeNo();
             txtStockInBy.Text = main.lblUsername.Text;
         }
@@ -35,6 +36,28 @@ namespace POSales
             txtRefNo.Text += rnd.Next();
         }
 
+        /*public void LoadSupplier()
+        {
+            cbSupplier.Items.Clear();
+            cbSupplier.DataSource = dbcon.getTable("SELECT * FROM tbSupplier");
+            cbSupplier.DisplayMember = "supplier";
+        }*/
+
+        public void ProductForSupplier(string pcode)
+        {
+            string supplier = "";
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM vwStockIn WHERE pcode LIKE '" + pcode + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                supplier = dr["supplier"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+            //cbSupplier.Text = supplier;
+        }
+
         public void LoadStockIn()
         {
             int i = 0;
@@ -42,7 +65,7 @@ namespace POSales
             cn.Open();
             cm = new SqlCommand("SELECT * FROM vwStockIn WHERE refno LIKE '" + txtRefNo.Text + "' AND status LIKE 'Pending'", cn);
             dr = cm.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
                 i++;
                 dgvStockIn.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr["supplier"].ToString());
@@ -54,7 +77,7 @@ namespace POSales
 
         private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbSupplier_KeyPress(object sender, KeyPressEventArgs e)
@@ -81,7 +104,7 @@ namespace POSales
                 {
                     if (MessageBox.Show("Are you sure you want to save this records?", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        for(int i=0; i<dgvStockIn.Rows.Count;i++)
+                        for (int i = 0; i < dgvStockIn.Rows.Count; i++)
                         {
                             //update product quantity
                             cn.Open();
@@ -139,7 +162,7 @@ namespace POSales
                 int i = 0;
                 dgvInStockHistory.Rows.Clear();
                 cn.Open();
-                cm = new SqlCommand("SELECT * FROM vwStockIn WHERE CAST(sdate as date) BETWEEN '"+dtFrom.Value.ToShortDateString()+ "' AND '" + dtTo.Value.ToShortDateString() + "' AND status LIKE 'Done'", cn);
+                cm = new SqlCommand("SELECT * FROM vwStockIn WHERE CAST(sdate as date) BETWEEN '" + dtFrom.Value.ToShortDateString() + "' AND '" + dtTo.Value.ToShortDateString() + "' AND status LIKE 'Done'", cn);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
@@ -153,9 +176,25 @@ namespace POSales
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        /*private void cbSupplier_TextChanged(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tbSupplier WHERE supplier LIKE '" + cbSupplier.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                lblId.Text = dr["id"].ToString();
+                txtConPerson.Text = dr["contactperson"].ToString();
+                txtAddress.Text = dr["address"].ToString();
+
+            }
+            dr.Close();
+            cn.Close();
+        }*/
     }
 }

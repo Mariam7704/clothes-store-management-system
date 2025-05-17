@@ -38,7 +38,6 @@
             this.btnRecord = new System.Windows.Forms.Button();
             this.panelSubStock = new System.Windows.Forms.Panel();
             this.btnStockAdjustment = new System.Windows.Forms.Button();
-            this.btnStockEntry = new System.Windows.Forms.Button();
             this.btnInStock = new System.Windows.Forms.Button();
             this.panelSubProduct = new System.Windows.Forms.Panel();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -53,7 +52,9 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSlide.SuspendLayout();
+            this.panelSubSetting.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
             this.panelSubStock.SuspendLayout();
             this.panelSubProduct.SuspendLayout();
@@ -89,7 +90,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(0, 712);
+            this.btnLogout.Location = new System.Drawing.Point(0, 671);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(179, 45);
@@ -102,8 +103,9 @@
             // panelSubSetting
             // 
             this.panelSubSetting.BackColor = System.Drawing.Color.LightPink;
+            this.panelSubSetting.Controls.Add(this.button1);
             this.panelSubSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubSetting.Location = new System.Drawing.Point(0, 622);
+            this.panelSubSetting.Location = new System.Drawing.Point(0, 581);
             this.panelSubSetting.Name = "panelSubSetting";
             this.panelSubSetting.Size = new System.Drawing.Size(179, 90);
             this.panelSubSetting.TabIndex = 8;
@@ -114,7 +116,7 @@
             this.panelSubRecord.Controls.Add(this.btnPosRecord);
             this.panelSubRecord.Controls.Add(this.btnSaleHist);
             this.panelSubRecord.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubRecord.Location = new System.Drawing.Point(0, 532);
+            this.panelSubRecord.Location = new System.Drawing.Point(0, 491);
             this.panelSubRecord.Name = "panelSubRecord";
             this.panelSubRecord.Size = new System.Drawing.Size(179, 90);
             this.panelSubRecord.TabIndex = 6;
@@ -163,7 +165,7 @@
             this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecord.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecord.ForeColor = System.Drawing.Color.Black;
-            this.btnRecord.Location = new System.Drawing.Point(0, 487);
+            this.btnRecord.Location = new System.Drawing.Point(0, 446);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnRecord.Size = new System.Drawing.Size(179, 45);
@@ -177,11 +179,10 @@
             // 
             this.panelSubStock.BackColor = System.Drawing.Color.LightPink;
             this.panelSubStock.Controls.Add(this.btnStockAdjustment);
-            this.panelSubStock.Controls.Add(this.btnStockEntry);
             this.panelSubStock.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubStock.Location = new System.Drawing.Point(0, 397);
             this.panelSubStock.Name = "panelSubStock";
-            this.panelSubStock.Size = new System.Drawing.Size(179, 90);
+            this.panelSubStock.Size = new System.Drawing.Size(179, 49);
             this.panelSubStock.TabIndex = 0;
             // 
             // btnStockAdjustment
@@ -192,33 +193,15 @@
             this.btnStockAdjustment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockAdjustment.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockAdjustment.ForeColor = System.Drawing.Color.Black;
-            this.btnStockAdjustment.Location = new System.Drawing.Point(0, 45);
+            this.btnStockAdjustment.Location = new System.Drawing.Point(0, 0);
             this.btnStockAdjustment.Name = "btnStockAdjustment";
             this.btnStockAdjustment.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStockAdjustment.Size = new System.Drawing.Size(179, 45);
+            this.btnStockAdjustment.Size = new System.Drawing.Size(179, 49);
             this.btnStockAdjustment.TabIndex = 5;
             this.btnStockAdjustment.Text = "Stock Adjustment";
             this.btnStockAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStockAdjustment.UseVisualStyleBackColor = false;
             this.btnStockAdjustment.Click += new System.EventHandler(this.btnStockAdjustment_Click);
-            // 
-            // btnStockEntry
-            // 
-            this.btnStockEntry.BackColor = System.Drawing.Color.Pink;
-            this.btnStockEntry.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockEntry.FlatAppearance.BorderSize = 0;
-            this.btnStockEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockEntry.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockEntry.ForeColor = System.Drawing.Color.Black;
-            this.btnStockEntry.Location = new System.Drawing.Point(0, 0);
-            this.btnStockEntry.Name = "btnStockEntry";
-            this.btnStockEntry.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStockEntry.Size = new System.Drawing.Size(179, 45);
-            this.btnStockEntry.TabIndex = 4;
-            this.btnStockEntry.Text = "Stock Entry";
-            this.btnStockEntry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockEntry.UseVisualStyleBackColor = false;
-            this.btnStockEntry.Click += new System.EventHandler(this.btnStockEntry_Click);
             // 
             // btnInStock
             // 
@@ -406,6 +389,24 @@
             this.panelMain.Size = new System.Drawing.Size(984, 621);
             this.panelMain.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Pink;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(179, 45);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Stock Entry";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -424,6 +425,7 @@
             this.Text = "Point Of Sales";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelSlide.ResumeLayout(false);
+            this.panelSubSetting.ResumeLayout(false);
             this.panelSubRecord.ResumeLayout(false);
             this.panelSubStock.ResumeLayout(false);
             this.panelSubProduct.ResumeLayout(false);
@@ -453,7 +455,6 @@
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.Panel panelSubStock;
         private System.Windows.Forms.Button btnStockAdjustment;
-        private System.Windows.Forms.Button btnStockEntry;
         private System.Windows.Forms.Button btnInStock;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -461,6 +462,7 @@
         public System.Windows.Forms.Label lblUsername;
         public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button button1;
     }
 }
 

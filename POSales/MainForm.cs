@@ -142,18 +142,7 @@ namespace POSales
             showSubmenu(panelSubSetting);
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            openChildForm(new UserAccount(this));
-            hideSubmenu();
-        }
 
-        private void btnStore_Click(object sender, EventArgs e)
-        {
-            hideSubmenu();
-            Store store = new Store();
-            store.ShowDialog();
-        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -163,7 +152,8 @@ namespace POSales
             {
                 this.Hide();
                 Login login = new Login();
-                login.ShowDialog();
+                login.Show();
+                this.Close();
             }
         }
 

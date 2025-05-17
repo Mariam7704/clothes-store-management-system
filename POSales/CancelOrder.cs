@@ -21,7 +21,17 @@ namespace POSales
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            dailySale = sale;            
+            dailySale = sale;
+            SetupComboBoxes();
+        }
+
+        private void SetupComboBoxes()
+        {
+            cboInventory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboInventory.Items.Clear();
+            cboInventory.Items.Add("Yes");
+            cboInventory.Items.Add("No");
+            cboInventory.SelectedIndex = -1;
         }
 
         private void btnCOrder_Click(object sender, EventArgs e)
